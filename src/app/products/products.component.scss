@@ -1,0 +1,87 @@
+/* Card Styling */
+.form-card {
+    max-width: 100%;
+    margin: auto;
+    padding: 15px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    font-family: Arial, sans-serif !important;
+}
+
+/* Title Styling */
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 8px;
+}
+
+/* Form Row */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    height: 60px;
+}
+
+.custom-input {
+    flex: 1;
+    min-width: 140px;
+}
+
+/* Smaller Inputs */
+.small-input .mat-form-field {
+    font-size: 9px !important;
+    height: 26px !important;
+    min-height: 26px !important;
+}
+
+/* Reduce input text size */
+.small-input .mat-input-element,
+.small-input .mat-select-trigger {
+    font-size: 9px !important;
+    padding: 2px 4px !important;
+    height: 20px !important;
+    line-height: 1 !important;
+}
+
+/* Shrink form field wrapper */
+.small-input .mat-form-field-wrapper {
+    padding-bottom: 0px !important;
+    padding-top: 0px !important;
+}
+
+/* Reduce label size */
+.small-input .mat-form-field-label {
+    font-size: 8px !important;
+    top: -6px !important;
+}
+
+/* Reduce form field outline */
+.small-input .mat-form-field-outline {
+    top: 0px !important;
+    height: 30px !important;
+}
+
+/* Reduce datepicker icon size */
+.small-input .mat-datepicker-toggle {
+    height: 40px !important;
+    min-width: 20px !important;
+}
+
+/* Action Buttons */
+.action {
+    display: flex;
+    justify-content: flex-end;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+/* Smaller Buttons */
+button {
+    font-size: 12px !important;
+    padding: 8px 8px !important;
+    height: 30px !important;
+}
