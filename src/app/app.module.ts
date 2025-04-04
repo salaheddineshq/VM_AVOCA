@@ -26,6 +26,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatRadioModule } from '@angular/material/radio';  // Radio button module
 import { MatSelectModule } from '@angular/material/select';  // Select dropdown module
+import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -58,7 +59,7 @@ import { MatSelectModule } from '@angular/material/select';  // Select dropdown 
     MatNativeDateModule,
     MatRadioModule,
     MatSelectModule,
-    
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

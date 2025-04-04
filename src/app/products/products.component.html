@@ -3,9 +3,8 @@
   <mat-card-content>
     <form [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
        <!-- Row 0 -->
-
        <div class="row">
-        <mat-form-field  appearance="outline" class="custom-input">
+        <mat-form-field appearance="outline" class="custom-input">
           <mat-label>Nom</mat-label>
           <input matInput type="text" placeholder="Nom" formControlName="nom">
         </mat-form-field>
@@ -27,7 +26,7 @@
       
       <!-- Row 1 -->
       <div class="row">
-        <mat-form-field  appearance="outline" class="custom-input small-input">
+        <mat-form-field appearance="outline" class="custom-input small-input">
           <mat-label>Année</mat-label>
           <input matInput type="number" placeholder="Ex. 2024" formControlName="year">
         </mat-form-field>
@@ -92,7 +91,70 @@
         <button mat-raised-button color="warn" type="button" (click)="onCancel()">Cancel</button>
         <button mat-raised-button color="primary" type="submit">Save</button>
       </div>
-
     </form>
+
+    <!-- Client Information Table -->
+    <mat-card class="info-card">
+      <mat-card-content>
+        <table mat-table [dataSource]="clientData" class="mat-elevation-z8">
+    
+          <!-- Column Definitions -->
+          <ng-container matColumnDef="nom">
+            <th mat-header-cell *matHeaderCellDef> Nom </th>
+            <td mat-cell *matCellDef="let client"> {{ client.nom }} </td>
+          </ng-container>
+    
+          <ng-container matColumnDef="prenom">
+            <th mat-header-cell *matHeaderCellDef> Prenom </th>
+            <td mat-cell *matCellDef="let client"> {{ client.prenom }} </td>
+          </ng-container>
+    
+          <ng-container matColumnDef="cin">
+            <th mat-header-cell *matHeaderCellDef> CIN </th>
+            <td mat-cell *matCellDef="let client"> {{ client.cin }} </td>
+          </ng-container>
+    
+          <ng-container matColumnDef="genre">
+            <th mat-header-cell *matHeaderCellDef> Genre </th>
+            <td mat-cell *matCellDef="let client"> {{ client.genre }} </td>
+          </ng-container>
+    
+          <ng-container matColumnDef="dossierNumber">
+            <th mat-header-cell *matHeaderCellDef> N° Dossier </th>
+            <td mat-cell *matCellDef="let client"> {{ client.dossierNumber }} </td>
+          </ng-container>
+    
+          <ng-container matColumnDef="dateEnregistrement">
+            <th mat-header-cell *matHeaderCellDef> Date Enregistrement </th>
+            <td mat-cell *matCellDef="let client"> {{ client.dateEnregistrement | date:'shortDate' }} </td>
+          </ng-container>
+    
+          <!-- Column for Action Buttons -->
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> Actions </th>
+            <td mat-cell *matCellDef="let client">
+              <!-- Edit Button -->
+              <button mat-icon-button color="primary" (click)="onEdit(client)">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <!-- Info Button -->
+              <button mat-icon-button color="accent" (click)="onInfo(client)">
+                <mat-icon>info_outline</mat-icon>
+              </button>
+              <!-- Delete Button -->
+              <button mat-icon-button color="warn" (click)="onDelete(client)" >
+                <mat-icon>delete_forever</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+    
+          <!-- Table Header and Row Definitions -->
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </mat-card-content>
+    </mat-card>
+    
+
   </mat-card-content>
 </mat-card>

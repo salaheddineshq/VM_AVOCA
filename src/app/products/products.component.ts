@@ -28,6 +28,13 @@ export class ProductsComponent  {
   Genres = ['Homme', 'Femme'];
 
 
+  clientData = [
+    { nom: 'John', prenom: 'Doe', cin: 'AA485', genre: 'M', dossierNumber: '12345', dateEnregistrement: new Date() },
+  ];
+  displayedColumns: string[] = ['nom', 'prenom', 'cin', 'genre', 'dossierNumber', 'dateEnregistrement', 'actions'];
+
+
+
   constructor(private fb: FormBuilder) {
     this.empForm = this.fb.group({
       year: [''],
@@ -56,5 +63,20 @@ export class ProductsComponent  {
 
   onCancel() {
     this.empForm.reset();
+  }
+
+  onEdit(client: any) {
+    // Handle the edit logic here
+    console.log('Edit client:', client);
+  }
+  
+  onInfo(client: any) {
+    // Handle the info logic here
+    console.log('Client info:', client);
+  }
+  
+  onDelete(client: any) {
+    // Handle the delete logic here
+    console.log('Delete client:', client);
   }
 }
